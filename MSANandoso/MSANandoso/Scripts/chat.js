@@ -15,7 +15,7 @@ function time() {
         hours = hours - 12;
     }
     // If midnight, it's 12:xx AM
-    if (hours == 0) {
+    if (hours === 0) {
         hours = 12;
     }
     // Now put it all together
@@ -38,7 +38,7 @@ $(function () {
     // Get the user name and store it to prepend to messages.
     $('#displayname').val(prompt('Enter your name:', ''));
     document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('#displayname').val() + '</b>';
-    if ($('#displayname').val() == '') {
+    if ($('#displayname').val() === '') {
         $('#displayname').val('anonymous');
         document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('#displayname').val() + '</b>';
     }
@@ -48,7 +48,7 @@ $(function () {
     $.connection.hub.start().done(function () {
         // Allow keyboard enter key to send
         $('#message').keyup(function (e) {
-            if (e.keyCode == 13) {
+            if (e.keyCode === 13) {
                 chat.server.send($('#displayname').val(), $('#message').val());
                 // Clear text box and reset focus for next comment.
                 $('#message').val('').focus();

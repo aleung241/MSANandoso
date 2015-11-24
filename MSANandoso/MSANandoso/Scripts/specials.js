@@ -10,7 +10,7 @@ function loadSpecials() {
 function setupSpecialsList(specialsList) {
     var specialGrid = document.getElementById("specialList");
 
-    for (var i = 0; i < specialsList.length; i++) {
+    for (var i = 0; i < specialsList.length; i ++) {
         var rowdiv = document.createElement("div");
         rowdiv.setAttribute("class", "row");
 

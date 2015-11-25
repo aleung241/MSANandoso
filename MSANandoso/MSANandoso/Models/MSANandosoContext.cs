@@ -64,41 +64,41 @@ namespace MSANandoso.Models
 				specials.ForEach(s => context.Specials.AddOrUpdate(p => p.Title, s));
 				context.SaveChanges();
 
-				var feedback = new List<Feedback>
-				{
-					new Feedback
-					{
-						Name = "John",
-						Message = "message 1"
-					},
-					new Feedback
-					{
-						Name = "Christine",
-						Message = "message 2"
-					},
-					new Feedback
-					{
-						Name = "Ryan",
-						Message = "message 3"
-					},
-					new Feedback
-					{
-						Name = "James",
-						Message = "message 4"
-					},
-					new Feedback
-					{
-						Name = "Mary",
-						Message = "message 5"
-					},
-					new Feedback
-					{
-						Name = "Bob",
-						Message = "message 6"
-					}
-				};
-				feedback.ForEach(s => context.Feedbacks.AddOrUpdate(p => p.Name, s));
-				context.SaveChanges();
+				//var feedback = new List<Feedback>
+				//{
+				//	new Feedback
+				//	{
+				//		Name = "John",
+				//		Message = "message 1"
+				//	},
+				//	new Feedback
+				//	{
+				//		Name = "Christine",
+				//		Message = "message 2"
+				//	},
+				//	new Feedback
+				//	{
+				//		Name = "Ryan",
+				//		Message = "message 3"
+				//	},
+				//	new Feedback
+				//	{
+				//		Name = "James",
+				//		Message = "message 4"
+				//	},
+				//	new Feedback
+				//	{
+				//		Name = "Mary",
+				//		Message = "message 5"
+				//	},
+				//	new Feedback
+				//	{
+				//		Name = "Bob",
+				//		Message = "message 6"
+				//	}
+				//};
+				//feedback.ForEach(s => context.Feedbacks.AddOrUpdate(p => p.Name, s));
+				//context.SaveChanges();
 			}
 		}
 

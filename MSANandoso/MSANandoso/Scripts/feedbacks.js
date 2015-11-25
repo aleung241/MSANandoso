@@ -32,4 +32,7 @@ function submitMessage() {
     var nameBox = document.getElementById("nameBox");
     var messageBox = document.getElementById("messageBox");
     postMessage(nameBox.value, messageBox.value);
+    setTimeout(function() {
+        location.reload();
+    }, 2000);
 }

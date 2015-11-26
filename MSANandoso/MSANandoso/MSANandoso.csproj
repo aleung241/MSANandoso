@@ -182,7 +182,16 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="images\background.jpg" />
     <Content Include="images\chilli.png" />
+    <Content Include="images\gordonramsay.jpg" />
+    <Content Include="images\herbs-spices.jpg" />
+    <Content Include="images\homepageSpecial.jpg" />
+    <Content Include="images\image01.jpg" />
+    <Content Include="images\image02.jpg" />
+    <Content Include="images\image03.jpg" />
+    <Content Include="images\image04.jpg" />
+    <Content Include="images\image05.jpg" />
     <Content Include="images\lined-paper.jpg" />
+    <Content Include="images\phonerep.JPG" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

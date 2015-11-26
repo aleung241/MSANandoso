@@ -4,6 +4,11 @@
 
 body {
     background-image: url(/images/background.jpg);
+    background-attachment: fixed;
+}
+
+p {
+    white-space: pre-line;
 }
 
 .NavBar {
@@ -123,16 +128,19 @@ body {
     width: 100%;
     max-width: 100%;
     background-color: transparent;
+    border: 2px solid;
 }
 
 #contactNameBox {
     background-color: transparent;
     width: 500px;
+    border: 2px solid;
 }
 
 #contactEmailBox {
     background-color: transparent;
     width: 500px;
+    border: 2px solid;
 }
 
 .a50pxSides {
@@ -141,4 +149,9 @@ body {
 
 #contactSubmitButton {
     margin-bottom: 50px;
+}
+
+#aboutPic {
+    float: right;
+    width: 600px;
 }

@@ -18,7 +18,8 @@ function setupSpecialsList(specialsList) {
         div5Col.setAttribute("class", "col-md-5");
 
         var image = document.createElement("img");
-        image.src = "http://placehold.it/400x300";
+        var imageName = specialsList[i].Image;
+        image.src = "/images/" + imageName;
         div5Col.appendChild(image);
 
 

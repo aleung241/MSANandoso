@@ -30,7 +30,7 @@ function initChatClient(username) {
     //$('#displayname').val('anonymous');
     //document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('displayname').val() + '</b>';
     //}
-    
+
 
     // Declare a proxy to reference the hub.
     var chat = $.connection.chatHub;
@@ -58,8 +58,10 @@ function initChatClient(username) {
         // Sends after pressing send button instead of keyboard button press enter
         $('#sendmessage').click(function () {
             // Call the Send method on the hub.
-            chat.server.send($('#displayname').val(), $('#message').val());
-            // Clear text box and reset focus for next comment.
+            if ($('#message').val().trim() !== "") {
+                chat.server.send($('#displayname').val(), $('#message').val());
+                // Clear text box and reset focus for next comment.
+            }
             $('#message').val('').focus();
         });
     });
@@ -84,7 +86,7 @@ $(function () {
         animation: "slide-from-top",
         inputPlaceholder: "name goes here"
     }
-    swal(setting, function(inputValue) {
+    swal(setting, function (inputValue) {
         validateUsername(inputValue);
     });
 });

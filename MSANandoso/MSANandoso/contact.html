@@ -7,6 +7,9 @@
 
     <link href="/Content/style.css" rel="stylesheet" />
     <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/contact.js"></script>
+    <script src="Scripts/sweetalert.min.js"></script>
+    <link href="Content/sweetalert.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -20,6 +23,26 @@
                 <li class="Nav-item"><a href="/chat.html">Live Chat</a></li>
                 <li class="Nav-item is-current"><a href="/contact.html">Contact Us</a></li>
             </ul>
+        </div>
+        <hr/>
+        <div class="aboutContent">
+            <div class="a50pxSides">
+                <div class="contactTitle">
+                    <br/><br/>
+                    <h3>Feel like talking to us about something?</h3>
+                </div>
+                <hr />
+                <div>
+                    <h5><b>Name</b></h5>
+                    <input id="contactNameBox" />
+                    <h5><b>Email</b></h5>
+                    <input id="contactEmailBox" />
+                    <h5><b>Enquiry</b></h5>
+                    <textarea id="contactMessageBox" rows="6"></textarea>
+                    <br /><br />
+                    <button id="contactSubmitButton" onclick="contactButtonClick()">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

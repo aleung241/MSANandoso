@@ -23,8 +23,15 @@ function time() {
     return time;
 }
 
-// Chat system
-$(function () {
+function initChatClient(username) {
+    //$('#displayname').val(prompt('Enter your name:', ''));
+    document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + username + '</b>';
+    //if ($('#displayname').val() === '') {
+    //$('#displayname').val('anonymous');
+    //document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('displayname').val() + '</b>';
+    //}
+    
+
     // Declare a proxy to reference the hub.
     var chat = $.connection.chatHub;
     // Create a function that the hub can call to broadcast messages.
@@ -35,20 +42,14 @@ $(function () {
         // Add the message to the page.
         $('#discussion').append('<li>' + time() + ' ' + '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
     };
-    // Get the user name and store it to prepend to messages.
-    $('#displayname').val(prompt('Enter your name:', ''));
-    document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('#displayname').val() + '</b>';
-    if ($('#displayname').val() === '') {
-        $('#displayname').val('anonymous');
-        document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('#displayname').val() + '</b>';
-    }
+
     // Set initial focus to message input box.
     $('#message').focus();
     // Start the connection.
     $.connection.hub.start().done(function () {
         // Allow keyboard enter key to send
         $('#message').keyup(function (e) {
-            if (e.keyCode === 13) {
+            if (e.keyCode === 13 && ($('#message').val().trim() !== "")) {
                 chat.server.send($('#displayname').val(), $('#message').val());
                 // Clear text box and reset focus for next comment.
                 $('#message').val('').focus();
@@ -61,5 +62,29 @@ $(function () {
             // Clear text box and reset focus for next comment.
             $('#message').val('').focus();
         });
+    });
+}
+
+function validateUsername(username) {
+    if (username === undefined || username === null || username.trim() === "") {
+        username = "anonymous";
+    }
+    initChatClient(username);
+}
+
+// Chat system
+$(function () {
+    // Get the user name and store it to prepend to messages.
+    var setting = {
+        title: "Enter your name",
+        text: "or leave blank to talk anonymously",
+        type: "input",
+        confirmButtonText: "Confirm",
+        closeOnConfirm: true,
+        animation: "slide-from-top",
+        inputPlaceholder: "name goes here"
+    }
+    swal(setting, function(inputValue) {
+        validateUsername(inputValue);
     });
 });

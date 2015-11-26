@@ -14,6 +14,7 @@ function setupFeedbacksList(feedbacksList) {
         var div = document.createElement("div");
 
         var name = document.createElement("h5");
+        name.setAttribute("id", "feedbackName");
         name.innerHTML = feedbacksList[i].Name;
         div.appendChild(name);
 
@@ -28,11 +29,13 @@ function setupFeedbacksList(feedbacksList) {
     }
 }
 
+// when message submit button pressed
 function submitMessage() {
     var nameBox = document.getElementById("nameBox");
     var messageBox = document.getElementById("messageBox");
     postMessage(nameBox.value, messageBox.value);
-    setTimeout(function() {
-        location.reload();
-    }, 2000);
+}
+
+function showSpinner() {
+    $('.spin').spin();
 }

@@ -18,7 +18,6 @@ function setupSpecialsList(specialsList) {
         div5Col.setAttribute("class", "col-md-5");
 
         var image = document.createElement("img");
-        image.class = "img-responsive";
         image.src = "http://placehold.it/400x300";
         div5Col.appendChild(image);
 
@@ -45,4 +44,8 @@ function setupSpecialsList(specialsList) {
         specialGrid.appendChild(rowdiv);
         specialGrid.appendChild(listbreak);
     }
+}
+
+function showSpinner() {
+    $('.spin').spin();
 }

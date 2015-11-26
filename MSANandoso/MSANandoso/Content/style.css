@@ -66,3 +66,33 @@
 .chatintro {
     font-weight: bold;
 }
+
+#messageBox {
+    width: 100%
+}
+
+#nameBox {
+    width: 500px;
+}
+
+#feedbackName {
+    font-weight: bold;
+}
+
+#submitButton {
+    margin-bottom: 50px;
+}
+
+.mainPageGrid {
+    font-weight: bold;
+}
+
+.mainPageGridImage {
+    display: block;
+    margin: auto;
+}
+
+.mainPageGridLink {
+    font-weight: bold;
+    color: red;
+}

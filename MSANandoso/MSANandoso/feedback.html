@@ -10,6 +10,8 @@
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/FeedbackModule.js"></script>
     <script src="Scripts/feedbacks.js"></script>
+    <link href="Content/jquery.spin.css" rel="stylesheet" />
+    <script src="Scripts/jquery.spin.js"></script>
 
 </head>
 <body>
@@ -24,11 +26,16 @@
                 <li class="Nav-item"><a href="/contact.html">Contact Us</a></li>
             </ul>
         </div>
-        <hr />
+        <hr/>
+        <div class="spin" data-spin></div>
+        <script>showSpinner();</script>
         <div id="feedbackList"></div>
         <div id="newMessage">
-            <input id="nameBox" />
-            <input id="messageBox" />
+            <h5><b>Name</b></h5>
+            <input id="nameBox"/>
+            <h5><b>Message</b></h5>
+            <textarea id="messageBox" rows="6" ></textarea>
+            <br/> <br/>
             <button id="submitButton" onclick="submitMessage()">Submit</button>
         </div>
     </div>

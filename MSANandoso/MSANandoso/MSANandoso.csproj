@@ -160,6 +160,7 @@
   <ItemGroup>
     <Content Include="about.html" />
     <Content Include="chat.html" />
+    <Content Include="Content\jquery.spin.css" />
     <Content Include="feedback.html" />
     <Content Include="contact.html" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -185,6 +186,7 @@
     <Content Include="Scripts\chat.js" />
     <Content Include="Scripts\FeedbackModule.js" />
     <Content Include="Scripts\feedbacks.js" />
+    <Content Include="Scripts\jquery.spin.js" />
     <Content Include="Scripts\SpecialModule.js" />
     <Content Include="Scripts\specials.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -224,7 +226,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

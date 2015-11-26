@@ -64,6 +64,8 @@ namespace MSANandoso.Models
 				specials.ForEach(s => context.Specials.AddOrUpdate(p => p.Title, s));
 				context.SaveChanges();
 
+				// Dummy data that was seeded during testing
+
 				//var feedback = new List<Feedback>
 				//{
 				//	new Feedback

@@ -181,6 +181,7 @@
     <None Include="Properties\PublishProfiles\MSA2015Nandoso - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="images\background.jpg" />
+    <Content Include="images\chicken-logo.png" />
     <Content Include="images\chilli.png" />
     <Content Include="images\gordonramsay.jpg" />
     <Content Include="images\herbs-spices.jpg" />

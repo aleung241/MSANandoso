@@ -23,14 +23,9 @@ function time() {
     return time;
 }
 
+//chat system
 function initChatClient(username) {
-    //$('#displayname').val(prompt('Enter your name:', ''));
     document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + username + '</b>';
-    //if ($('#displayname').val() === '') {
-    //$('#displayname').val('anonymous');
-    //document.getElementById('chatintro').innerHTML = 'You are talking as: ' + '<b>' + $('displayname').val() + '</b>';
-    //}
-
 
     // Declare a proxy to reference the hub.
     var chat = $.connection.chatHub;
@@ -50,7 +45,7 @@ function initChatClient(username) {
         // Allow keyboard enter key to send
         $('#message').keyup(function (e) {
             if (e.keyCode === 13 && ($('#message').val().trim() !== "")) {
-                chat.server.send($('#displayname').val(), $('#message').val());
+                chat.server.send(username, $('#message').val());
                 // Clear text box and reset focus for next comment.
                 $('#message').val('').focus();
             }
@@ -59,7 +54,7 @@ function initChatClient(username) {
         $('#sendmessage').click(function () {
             // Call the Send method on the hub.
             if ($('#message').val().trim() !== "") {
-                chat.server.send($('#displayname').val(), $('#message').val());
+                chat.server.send(username, $('#message').val());
                 // Clear text box and reset focus for next comment.
             }
             $('#message').val('').focus();
@@ -67,6 +62,7 @@ function initChatClient(username) {
     });
 }
 
+//username validation
 function validateUsername(username) {
     if (username === undefined || username === null || username.trim() === "") {
         username = "anonymous";
@@ -74,7 +70,7 @@ function validateUsername(username) {
     initChatClient(username);
 }
 
-// Chat system
+// get username
 $(function () {
     // Get the user name and store it to prepend to messages.
     var setting = {
